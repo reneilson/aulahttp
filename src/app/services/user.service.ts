@@ -9,9 +9,7 @@ import { User } from './../models/User';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  async create(user: User) {
-    return this.http.post(`${environment.backendUrl}/users`, user).toPromise();
-  }
+  async create(user: User) {}
 
   async list() {
     const users = await this.http

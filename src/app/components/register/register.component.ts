@@ -77,11 +77,7 @@ export class RegisterComponent implements OnInit {
     this.user!.eyeColor = this.form.value.colorControl;
   }
 
-  async send() {
-    this.getUserFromForm();
-    await this.userService.create(this.user!);
-    this.router.navigate(['']);
-  }
+  async send() {}
 
   back() {
     this.router.navigate(['']);
