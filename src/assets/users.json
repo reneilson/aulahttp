@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "photo": "https://picsum.photos/id/237/200/300",
+      "age": 30,
+      "eyeColor": "blue",
+      "name": "Walter Ortega",
+      "email": "walterortega@zilencio.com",
+      "password": "Nolan123",
+      "latitude": 88.291773,
+      "longitude": 9.700222
+    },
+    {
+      "id": 2,
+      "photo": "https://picsum.photos/id/238/200/300",
+      "age": 39,
+      "eyeColor": "brown",
+      "name": "Viola Castaneda",
+      "email": "violacastaneda@zilencio.com",
+      "password": "Ashley123",
+      "latitude": 0.473995,
+      "longitude": 158.635671
+    },
+    {
+      "id": 3,
+      "photo": "https://picsum.photos/id/239/200/300",
+      "age": 29,
+      "eyeColor": "brown",
+      "name": "Tran Norman",
+      "email": "trannorman@zilencio.com",
+      "password": "Kendra123",
+      "latitude": 56.540562,
+      "longitude": 3.965776
+    },
+    {
+      "id": 4,
+      "photo": "https://picsum.photos/id/240/200/300",
+      "age": 20,
+      "eyeColor": "brown",
+      "name": "Maryann Ballard",
+      "email": "maryannballard@zilencio.com",
+      "password": "Finch123",
+      "latitude": -81.88321,
+      "longitude": 175.267659
+    },
+    {
+      "id": 5,
+      "photo": "https://picsum.photos/id/241/200/300",
+      "age": 33,
+      "eyeColor": "blue",
+      "name": "Newton Leon",
+      "email": "newtonleon@zilencio.com",
+      "password": "Dona123",
+      "latitude": 10.760492,
+      "longitude": 122.955269
+    },
+    {
+      "id": 6,
+      "photo": "https://picsum.photos/id/242/200/300",
+      "age": 35,
+      "eyeColor": "blue",
+      "name": "Jill Chandler",
+      "email": "jillchandler@zilencio.com",
+      "password": "Wilder123",
+      "latitude": 10.196301,
+      "longitude": 3.678777
+    },
+    {
+      "id": 7,
+      "photo": "https://picsum.photos/id/243/200/300",
+      "age": 22,
+      "eyeColor": "brown",
+      "name": "Gilda Saunders",
+      "email": "gildasaunders@zilencio.com",
+      "password": "Dena123",
+      "latitude": 81.240162,
+      "longitude": 79.652516
+    },
+    {
+      "id": 8,
+      "photo": "https://picsum.photos/id/244/200/300",
+      "age": 29,
+      "eyeColor": "blue",
+      "name": "Veronica Lambert",
+      "email": "veronicalambert@zilencio.com",
+      "password": "Lang123",
+      "latitude": 83.753075,
+      "longitude": 115.979433
+    },
+    {
+      "id": 9,
+      "photo": "https://picsum.photos/id/235/200/300",
+      "age": 29,
+      "eyeColor": "green",
+      "name": "Cohen Richardson",
+      "email": "cohenrichardson@zilencio.com",
+      "password": "Joan123",
+      "latitude": -7.255124,
+      "longitude": -66.694171
+    },
+    {
+      "id": 10,
+      "photo": "https://picsum.photos/id/234/200/300",
+      "age": 32,
+      "eyeColor": "blue",
+      "name": "Jessica Mccray",
+      "email": "jessicamccray@zilencio.com",
+      "password": "Faulkner123",
+      "latitude": -36.225294,
+      "longitude": 125.006196
+    },
+    {
+      "id": 11,
+      "photo": "https://picsum.photos/id/232/200/300",
+      "age": 39,
+      "eyeColor": "green",
+      "name": "Leigh Adkins",
+      "password": "Faulkner123",
+      "email": "leighadkins@isosphere.com",
+      "latitude": 2.79987,
+      "longitude": -54.127539
+    },
+    {
+      "id": 12,
+      "photo": "https://picsum.photos/id/231/200/300",
+      "age": 38,
+      "eyeColor": "green",
+      "name": "Eloise Price",
+      "password": "Faulkner123",
+      "email": "eloiseprice@isosphere.com",
+      "latitude": -7.533704,
+      "longitude": 82.47642
+    },
+    {
+      "id": 13
+    },
+    {
+      "name": "Santos",
+      "email": "reneilson1@gmail.com",
+      "password": "123",
+      "photo": "https://images.unsplash.com/photo-1501183007986-d0d080b147f9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJlZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+      "age": 22,
+      "latitude": 22,
+      "longitude": 22,
+      "eyeColor": null,
+      "id": 14
+    }
+  ]
+}

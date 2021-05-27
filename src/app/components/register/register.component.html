@@ -1,0 +1,45 @@
+<div class="container">
+  <mat-card class="card-form">
+    <form [formGroup]="form" class="form-group">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="idControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nameControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="emailControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="passControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Foto</mat-label>
+        <input matInput formControlName="photoControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Idade</mat-label>
+        <input matInput type="number" formControlName="ageControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cor do Olho</mat-label>
+        <input matInput type="color" formControlName="colorControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Latitude</mat-label>
+        <input matInput type="number" formControlName="latControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Longitude</mat-label>
+        <input matInput type="number" formControlName="longControl" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="send()">Enviar</button>
+      <button mat-raised-button (click)="eraseForm()">Apagar Dados</button>
+      <button mat-raised-button (click)="back()">Voltar</button>
+    </form>
+  </mat-card>
+</div>
