@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from './../../models/User';
 import { UserService } from './../../services/user.service';
@@ -11,6 +12,7 @@ import { UserService } from './../../services/user.service';
 })
 export class RegisterComponent implements OnInit {
   user?: User;
+  showLoading = false;
   form = new FormGroup({
     idControl: new FormControl({ value: '', disabled: true }),
     nameControl: new FormControl(),
@@ -25,7 +27,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -66,7 +69,6 @@ export class RegisterComponent implements OnInit {
   }
 
   getUserFromForm() {
-    this.user = {} as any;
     this.user!.name = this.form.value.nameControl;
     this.user!.email = this.form.value.emailControl;
     this.user!.password = this.form.value.passControl;
@@ -77,17 +79,55 @@ export class RegisterComponent implements OnInit {
     this.user!.eyeColor = this.form.value.colorControl;
   }
 
-  async send() {
-    this.getUserFromForm();
-
-    if (this.user!.id) {
-      await this.userService.update(this.user!.id, this.user!);
-    } else {
-      await this.userService.create(this.user!);
+  private async update() {
+    try {
+      await this.userService.update(this.user!.id!, this.user!);
+      this.snackBar.open('Usuário atualizado com sucesso!', 'x', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: 'success',
+      });
+    } catch (error) {
+      this.snackBar.open('Não foi possível atualizar o usuário', 'x', {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: 'warn',
+      });
+      throw error;
     }
+  }
 
-    alert('Usuário criado com sucesso!');
-    this.router.navigate(['']);
+  private async create() {
+    try {
+      await this.userService.create(this.user!);
+      this.snackBar.open('Usuário criado com sucesso!', undefined, {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: 'success',
+      });
+    } catch (error) {
+      this.snackBar.open('Não foi possível atualizar o usuário', undefined, {
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: 'warn',
+      });
+      throw error;
+    }
+  }
+
+  async send() {
+    try {
+      this.getUserFromForm();
+      this.showLoading = true;
+      if (this.user!.id) {
+        this.update();
+      } else {
+        this.create();
+      }
+      // this.router.navigate(['']);
+    } finally {
+      this.showLoading = false;
+    }
   }
 
   back() {

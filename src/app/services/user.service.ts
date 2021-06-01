@@ -7,7 +7,7 @@ import { User } from './../models/User';
   providedIn: 'root',
 })
 export class UserService {
-  private url = environment.backendUrl + '/objetos';
+  private url = environment.backendUrl + '/users';
   constructor(private http: HttpClient) {}
 
   async create(user: User) {
@@ -21,11 +21,13 @@ export class UserService {
   }
 
   async read(id: number) {
-    const user = await this.http.get(this.url + '/' + id).toPromise();
+    const urlGet = this.url + '/' + id;
+    const user = await this.http.get(urlGet).toPromise();
     return user;
   }
 
   async update(id: number, user: User) {
+    throw Error('Erro');
     const userUpdated = await this.http
       .patch(this.url + '/' + id, user)
       .toPromise();

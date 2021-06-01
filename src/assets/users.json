@@ -5,7 +5,7 @@
       "photo": "https://picsum.photos/id/237/200/300",
       "age": 30,
       "eyeColor": "blue",
-      "name": "Walter Ortega",
+      "name": "Walter Camargo",
       "email": "walterortega@zilencio.com",
       "password": "Nolan123",
       "latitude": 88.291773,
@@ -131,6 +131,28 @@
       "longitude": 22,
       "eyeColor": null,
       "id": 14
+    },
+    {
+      "name": "Viola Silva",
+      "email": "violacastaneda@zilencio.com",
+      "password": "Ashley123",
+      "photo": "https://picsum.photos/id/238/200/300",
+      "age": 39,
+      "latitude": 0.473995,
+      "longitude": 158.635671,
+      "eyeColor": "brown",
+      "id": 15
+    },
+    {
+      "name": "Newton José",
+      "email": "newtonleon@zilencio.com",
+      "password": "Dona123",
+      "photo": "https://picsum.photos/id/241/200/300",
+      "age": 33,
+      "latitude": 10.760492,
+      "longitude": 122.955269,
+      "eyeColor": "blue",
+      "id": 16
     }
   ],
   "clients": [
