@@ -1,0 +1,27 @@
+{
+  "objetos": [
+    {
+      "data_de_vencimento": "10/03/2022",
+      "tipo": ""
+    }
+  ],
+  "notificacoes": [
+    {
+      "imagem": "http://",
+      "conteudo": "Lorem Ipsum"
+    }
+  ],
+  "documentos": [
+    {
+      "documento": "http://",
+      "tipo": "Alvara",
+      "numero": "000.000.000"
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "mail@mail.com",
+      "senha": "123456"
+    }
+  ]
+}

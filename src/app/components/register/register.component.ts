@@ -24,14 +24,14 @@ export class RegisterComponent implements OnInit {
   });
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(async (params) => {
       if (params.id) {
-        // this.user = await this.userService.get(params.id);
+        this.user = (await this.userService.read(params.id)) as any;
         this.updateForm();
       }
     });
@@ -77,7 +77,18 @@ export class RegisterComponent implements OnInit {
     this.user!.eyeColor = this.form.value.colorControl;
   }
 
-  async send() {}
+  async send() {
+    this.getUserFromForm();
+
+    if (this.user!.id) {
+      await this.userService.update(this.user!.id, this.user!);
+    } else {
+      await this.userService.create(this.user!);
+    }
+
+    alert('Usuário criado com sucesso!');
+    this.router.navigate(['']);
+  }
 
   back() {
     this.router.navigate(['']);

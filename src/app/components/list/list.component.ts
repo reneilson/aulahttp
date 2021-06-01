@@ -19,5 +19,6 @@ export class ListComponent implements OnInit {
   async remover(user: User) {
     const index = this.users!.findIndex((u) => user.id == u.id);
     this.users!.splice(index, 1);
+    await this.userService.delete(user.id!);
   }
 }

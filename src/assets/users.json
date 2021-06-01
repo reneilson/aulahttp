@@ -111,17 +111,6 @@
       "longitude": 125.006196
     },
     {
-      "id": 11,
-      "photo": "https://picsum.photos/id/232/200/300",
-      "age": 39,
-      "eyeColor": "green",
-      "name": "Leigh Adkins",
-      "password": "Faulkner123",
-      "email": "leighadkins@isosphere.com",
-      "latitude": 2.79987,
-      "longitude": -54.127539
-    },
-    {
       "id": 12,
       "photo": "https://picsum.photos/id/231/200/300",
       "age": 38,
@@ -133,9 +122,6 @@
       "longitude": 82.47642
     },
     {
-      "id": 13
-    },
-    {
       "name": "Santos",
       "email": "reneilson1@gmail.com",
       "password": "123",
@@ -145,6 +131,13 @@
       "longitude": 22,
       "eyeColor": null,
       "id": 14
+    }
+  ],
+  "clients": [
+    {
+      "name": "Jill Chandler",
+      "document": "111.111.111-11",
+      "document_type": "CPF"
     }
   ]
 }
