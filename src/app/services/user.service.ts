@@ -27,7 +27,6 @@ export class UserService {
   }
 
   async update(id: number, user: User) {
-    throw Error('Erro');
     const userUpdated = await this.http
       .patch(this.url + '/' + id, user)
       .toPromise();
