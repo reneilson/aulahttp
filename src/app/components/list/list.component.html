@@ -1,8 +1,8 @@
-<div *ngIf="!users || !users.length">
+<div *ngIf="isLoading">
   <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
 </div>
 <div class="container">
-  <div *ngFor="let user of users" class="cards">
-    <app-item [user]="user" (emitRemove)="remover($event)"></app-item>
+  <div *ngFor="let pet of pets" class="cards">
+    <app-item [pet]="pet" (emitRemove)="remover($event)"></app-item>
   </div>
 </div>

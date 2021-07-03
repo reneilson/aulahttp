@@ -3,16 +3,53 @@
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #e5e5e5;
+  font-family: "Roboto", sans-serif;
+}
+
+.app-header {
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 }
 
 .warn {
-  color: red;
+  color: rgb(134, 14, 14);
+  background-color: white;
+  button {
+    color: rgb(134, 14, 14);
+  }
 }
 
 .success {
-  color: darkgreen;
+  color: rgb(21, 109, 21);
+  background-color: white;
+  button {
+    color: rgb(21, 109, 21);
+  }
+}
+
+.mat-card-image {
+  height: fit-content;
+  max-height: 300px !important;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.positronx {
+  img {
+    height: 50px;
+  }
 }

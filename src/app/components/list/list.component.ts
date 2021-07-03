@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './../../models/User';
-import { UserService } from './../../services/user.service';
+import { Pet } from './../../models/Pet';
+import { PetService } from './../../services/pet.service';
 
 @Component({
   selector: 'app-list',
@@ -8,17 +8,22 @@ import { UserService } from './../../services/user.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  users?: Array<User>;
+  pets?: Array<Pet>;
+  isLoading = true;
 
-  constructor(private userService: UserService) {}
+  constructor(private petService: PetService) {}
 
   async ngOnInit() {
-    this.users = (await this.userService.list()) as any;
+    try {
+      this.pets = (await this.petService.list()) as any;
+    } finally {
+      this.isLoading = false;
+    }
   }
 
-  async remover(user: User) {
-    const index = this.users!.findIndex((u) => user.id == u.id);
-    this.users!.splice(index, 1);
-    await this.userService.delete(user.id!);
+  async remover(pet: Pet) {
+    const index = this.pets!.findIndex((p) => pet.id == p.id);
+    this.pets!.splice(index, 1);
+    await this.petService.delete(pet.id!);
   }
 }

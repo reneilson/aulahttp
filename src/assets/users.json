@@ -1,5 +1,5 @@
 {
-  "users": [
+  "usuario": [
     {
       "id": 1,
       "photo": "https://picsum.photos/id/237/200/300",
@@ -153,6 +153,24 @@
       "longitude": 122.955269,
       "eyeColor": "blue",
       "id": 16
+    },
+    {
+      "nome": "",
+      "sobrenome": "",
+      "cpf": "",
+      "cidade": "",
+      "bairro": "",
+      "logradouro": "",
+      "numero": "",
+      "cep": "",
+      "telefone": "",
+      "email": "",
+      "senha": "",
+      "tipoUsuario": "",
+      "status": "",
+      "foto": "",
+      "piker": "",
+      "id": 17
     }
   ],
   "clients": [

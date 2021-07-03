@@ -1,0 +1,37 @@
+<div class="container">
+  <mat-card class="card-form">
+    <form [formGroup]="form" class="form-group">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="emailControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="passControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="usernameControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nameControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Sobrenome</mat-label>
+        <input matInput formControlName="lastnameControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <input matInput type="phone" formControlName="phoneControl" />
+      </mat-form-field>
+      <button mat-raised-button type="button" color="primary" (click)="send()">
+        Enviar
+      </button>
+      <button mat-raised-button type="reset">
+        Apagar Dados
+      </button>
+      <button mat-raised-button type="button" (click)="back()">Voltar</button>
+    </form>
+  </mat-card>
+</div>

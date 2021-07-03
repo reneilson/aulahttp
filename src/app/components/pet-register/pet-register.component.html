@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-card class="card-form">
+    <form [formGroup]="form" class="form-group">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Foto</mat-label>
+        <input matInput formControlName="photoUrl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Categoria</mat-label>
+        <input matInput formControlName="category" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tags</mat-label>
+        <input matInput formControlName="tags" />
+      </mat-form-field>
+      <button mat-raised-button type="button" color="primary" (click)="send()">
+        Enviar
+      </button>
+      <button mat-raised-button type="reset">
+        Apagar Dados
+      </button>
+      <button mat-raised-button type="button" (click)="back()">Voltar</button>
+    </form>
+  </mat-card>
+</div>
