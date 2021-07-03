@@ -68,12 +68,15 @@ export class PetRegisterComponent implements OnInit {
         horizontalPosition: 'center',
         verticalPosition: 'top',
         panelClass: 'success',
+        duration: 500,
       });
+      this.router.navigate(['']);
     } catch (error) {
       this.snackBar.open('Não foi possível atualizar o pet', 'x', {
         horizontalPosition: 'center',
         verticalPosition: 'top',
         panelClass: 'warn',
+        duration: 500,
       });
       throw error;
     }
@@ -86,6 +89,7 @@ export class PetRegisterComponent implements OnInit {
         horizontalPosition: 'center',
         verticalPosition: 'top',
         panelClass: 'success',
+        duration: 500,
       });
       this.router.navigate(['']);
     } catch (error) {
@@ -93,6 +97,7 @@ export class PetRegisterComponent implements OnInit {
         horizontalPosition: 'center',
         verticalPosition: 'top',
         panelClass: 'warn',
+        duration: 500,
       });
       throw error;
     }

@@ -15,12 +15,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { ErrorInterceptor } from './auth/error.interceptor';
 import { HomeComponent } from './components/home/home.component';
 import { ItemComponent } from './components/item/item.component';
 import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
-import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { PetRegisterComponent } from './components/pet-register/pet-register.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PetRegisterComponent } from './components/pet-register/pet-register.com
     MatToolbarModule,
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

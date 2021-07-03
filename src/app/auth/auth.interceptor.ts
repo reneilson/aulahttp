@@ -1,18 +1,15 @@
 import {
-  HttpErrorResponse,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { defer, Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   /**
    * Intercept request to authorize request with oauth service.
@@ -20,36 +17,14 @@ export class AuthInterceptor implements HttpInterceptor {
    * @param next next
    */
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
-    const self = this;
-
-    if (self.checkUrl(request)) {
-      const authHandle = defer(() => {
-        const authorizedReq = request.clone({
-          headers: request.headers
-            .set(
-              'Authorization',
-              `Bearer ${self.authService.getStoredToken()!.token}`
-            )
-            .set('Access-Control-Allow-Origin', '*'),
-        });
-        return next.handle(authorizedReq);
+    if (this.checkUrl(request)) {
+      const token = this.authService.getStoredToken()!.token;
+      const authorizedReq = request.clone({
+        headers: request.headers
+          .set('Authorization', `Bearer ${token}`)
+          .set('Access-Control-Allow-Origin', '*'),
       });
-
-      return authHandle.pipe(
-        retry(1),
-        catchError((requestError) => {
-          if (
-            requestError instanceof HttpErrorResponse &&
-            requestError.status === 401
-          ) {
-            self.authService.logout();
-            this.router.navigate(['login']);
-            return throwError(requestError);
-          } else {
-            return throwError(requestError);
-          }
-        })
-      );
+      return next.handle(authorizedReq);
     } else {
       return next.handle(request);
     }

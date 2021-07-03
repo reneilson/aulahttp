@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   async ngOnInit() {
     const token = this.authService.getStoredToken();
-    if (token && this.authService.isLogged()) {
+    if (token && (await this.authService.isLogged())) {
       this.router.navigate(['']);
     }
   }
